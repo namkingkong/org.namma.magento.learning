@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ActiveCodeline_SimpleModule1>
+            <version>1.0.0</version>
+        </ActiveCodeline_SimpleModule1>
+    </modules>
+
+    <global>
+        <helpers>
+            <simplemodule1>
+                <class>ActiveCodeline_SimpleModule1_Helper</class>
+            </simplemodule1>
+        </helpers>
+    </global>
+
+    <admin>
+        <routers>
+            <simplemodule1>
+                <use>admin</use>
+                <args>
+                    <module>ActiveCodeline_SimpleModule1_Adminhtml</module>
+                    <frontName>simplemodule1</frontName>
+                </args>
+            </simplemodule1>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <menu>
+            <menu1 translate="title" module="simplemodule1">
+                <title>ActiveCodeLine SimpleModule1</title>
+                <sort_order>9999</sort_order>
+                <children>
+                    <menuitem1 translate="title" module="simplemodule1">
+                        <title>Menu Item 1</title>
+                        <action>simplemodule1/example/index</action>
+                    </menuitem1>
+                </children>
+            </menu1>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <menu1 translate="title" module="simplemodule1">
+                            <title>Manage: ActiveCodeLine SimpleModule 1</title>
+                            <children>
+                                <menuitem1>
+                                    <title>Manage: Menu Item 1</title>
+                                </menuitem1>
+                            </children>
+                        </menu1>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
